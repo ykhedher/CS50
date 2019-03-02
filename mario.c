@@ -7,7 +7,7 @@ int Height;
     do
     {
         Height = get_int("Height: ");
-    } 
+    }
     while (Height > 8 || Height < 1);
     for (int i = 1; i <= Height; i++)
     {
@@ -19,6 +19,6 @@ int Height;
               {
                 printf("#");
               }
-        printf("\n");
+              printf("\n");
     }
 }
