@@ -2,7 +2,7 @@
 #include <cs50.h>
 #include <math.h>
 //prototype of the function
-int func(long credit, int count);
+int luhn(long credit, int count);
 int main(void) 
 {
     long Credit = get_long("Number: ");
@@ -20,7 +20,7 @@ int main(void)
         Credit /= 10;
         count++;
     }
-    int isValid = func(copy, count); 
+    int isValid = luhn(copy, count); 
     //INVALID
     if (isValid)     
     {
@@ -50,7 +50,7 @@ int main(void)
 }
 
 // function 
-int func(long credit, int count)
+int luhn(long credit, int count)
 { 
     long p = pow(10, count - 1);
     int sum = 0;
@@ -61,44 +61,53 @@ int func(long credit, int count)
         //if count is not pair
         if (count % 2 != 0)
         {
-        // check if the digit is odd or even
+            // check if the digit is odd or even
             if (i % 2 != 0)
             {
-        // if it's higher than 10 exp 12 = 1 + 2
-              k*=2;
+                // if it's higher than 10 exp 12 = 1 + 2
+                k *= 2;
                 if (k > 9)
                 {
                     sum += ((int) k / 10) + (k % 10);
                 }
-                 // if it's not higher than 9 add it to the sum directly
-                else sum +=k;
-            }
-                 // if it's not even add it to the sum without doubling it
-            else {
+                // if it's not higher than 9 add it to the sum directly
+                else
+                {
                     sum += k;
-                 }
+                }        
+            }
+            // if it's not even add it to the sum without doubling it
+            else 
+            {
+                sum += k;
+            }
             credit %= p;
-            p/=10;   
+            p /= 10;   
     
         }
        
-        else if (count % 2 ==0)
+        else if (count % 2 == 0)
         {
-                 if (i % 2 == 0)
+            if (i % 2 == 0)
             {
-              k*=2;
+                k *= 2;
                 if (k > 9)
                 {
                     sum += ((int) k / 10) + (k % 10);
                 }
-                else sum +=k;
-            }
-            else {
+                else 
+                {
                     sum += k;
-                 }
-            credit %= p;
-            p/=10;   
+                }
+                    
             }
+            else
+            {
+                sum += k;
+            }
+            credit %= p;
+            p /= 10;   
+        }
             
        
     }
