@@ -58,30 +58,49 @@ int func(long credit, int count)
     {
         // extract the ith digit
         int k = credit / p;
+        //if count is not pair
+        if (count % 2 != 0)
+        {
         // check if the digit is odd or even
-        if (i % 2 == 0)
-        {
-            k *= 2;
-            // if it's higher than 10 exp 12 = 1 + 2
-            if (k > 9)
+            if (i % 2 != 0)
             {
-                sum += ((int) k / 10) + (k % 10);
+        // if it's higher than 10 exp 12 = 1 + 2
+              k*=2;
+                if (k > 9)
+                {
+                    sum += ((int) k / 10) + (k % 10);
+                }
+                 // if it's not higher than 9 add it to the sum directly
+                else sum +=k;
             }
-            // if it's not higher than 9 add it to the sum directly
-            else
-            {
-                sum += k;
-            }
-                
+                 // if it's not even add it to the sum without doubling it
+            else {
+                    sum += k;
+                 }
+            credit %= p;
+            p/=10;   
+    
         }
-        // if it's not even add it to the sum without doubling it
-        else 
+       
+        else if (count % 2 ==0)
         {
-            sum += k;
-        }
-        //change the new value of credit and p(diviser)
-        credit %= p;
-        p /= 10;   
+                 if (i % 2 == 0)
+            {
+              k*=2;
+                if (k > 9)
+                {
+                    sum += ((int) k / 10) + (k % 10);
+                }
+                else sum +=k;
+            }
+            else {
+                    sum += k;
+                 }
+            credit %= p;
+            p/=10;   
+            }
+            
+       
     }
      
     if (sum % 10 == 0)
