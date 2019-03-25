@@ -11,7 +11,8 @@ int main(int argc, string argv[])
     // case the number of arguments is not 2 
     if (argc != 2)
     {
-        printf("Usage: ./caesar key\n");
+        //printf("Usage: ./caesar key\n");
+        exit(0);
       
     }          
     // case the number of arguments is 2 and arg 2 is string or number + characters
