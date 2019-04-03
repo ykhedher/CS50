@@ -5,6 +5,7 @@
 int notDigit(string argv);
 char shift(char text, int key);
 int keyDecoding(int c);
+int keywordCheck(string text);
 
 
 
@@ -15,13 +16,14 @@ int main(int argc, string argv[])
     {
         //printf("Usage: ./caesar key\n");
         printf("Usage: ./vigenere keyword\n");
-        exit(1);
+        
 
     }          
     // case the number of arguments is 2 and arg 2 is string or number + characters
-    else if (notDigit(argv[1]))
+    else if (keywordCheck(argv[1]))
     {
         printf("Usage: ./vigenere keyword\n");
+        EXIT_FAILURE ;
     }
     //case all is Good
     else
@@ -119,4 +121,16 @@ int keyDecoding(int c)
     int key = c - 'A';
     return (key);
 }
-
+int keywordCheck (string text)
+{
+    int length = strlen(text);
+    for (int i = 0; i < length; i++)
+    {
+        if (isdigit(text[i]))
+        {
+            return 1;
+        }
+    }
+    return 0;
+    
+}
