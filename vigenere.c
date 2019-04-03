@@ -16,6 +16,7 @@ int main(int argc, string argv[])
     {
         //printf("Usage: ./caesar key\n");
         printf("Usage: ./vigenere keyword\n");
+        exit(1);
         
 
     }          
@@ -23,7 +24,7 @@ int main(int argc, string argv[])
     else if (keywordCheck(argv[1]))
     {
         printf("Usage: ./vigenere keyword\n");
-        EXIT_FAILURE ;
+        exit(1);
     }
     //case all is Good
     else
@@ -121,7 +122,7 @@ int keyDecoding(int c)
     int key = c - 'A';
     return (key);
 }
-int keywordCheck (string text)
+int keywordCheck(string text)
 {
     int length = strlen(text);
     for (int i = 0; i < length; i++)
