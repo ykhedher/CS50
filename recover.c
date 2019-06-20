@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
         if (data[0] == 0xff && 
             data[1] == 0xd8 && 
             (data[3] & 0xf0) == 0xe0)
-        // Yes...this is the start of a new JPEG
+            // Yes...this is the start of a new JPEG
         {
             
             // Do we already have a JPEG file open?
