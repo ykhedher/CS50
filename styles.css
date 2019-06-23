@@ -1,0 +1,51 @@
+main
+{
+    font-size-adjust: 90px;
+    text-align-last: center;
+}
+#body1
+{
+    background-color: black;
+    color: white;
+    margin:4.5px;
+}
+h1
+{
+    text-align-last: center;
+}
+#img1
+{
+      border-radius: 50%;
+      height: 300px;
+      width: 300px;
+}
+#body2
+{
+    background-color: white;
+    color: black;
+    margin:4.5px;
+}
+#body3
+{
+    background-color: DarkSalmon;
+    color: white;
+    margin:4.5px;
+}
+#body4
+{
+    background-color: DarkBlue;
+    color: red;
+    margin:4.5px;
+}
+img
+{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+}
+
+.textParagraph
+{
+    font-family:Helvetica;
+}
