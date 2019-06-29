@@ -1,6 +1,5 @@
 from sys import argv
 from cs50 import get_string
-
 # case the number of arguments is not 2 
 if len(argv) != 2:
     print("Usage: python caesar.py key: ")
@@ -20,6 +19,4 @@ for c in string:
             output += chr(c)
     else:
         output += c
-print("ciphertext:",output)
-
-
+print("ciphertext:", output)
