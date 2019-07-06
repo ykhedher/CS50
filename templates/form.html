@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Form</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form action="/form" method="post">
+
+        <!-- TODO -->
+        <div class="col-md-2 mb-3">
+          <input type="text" class="form-control" name="name" placeholder="Name" autofocus="on" required>
+          </div>
+              <div class="col-md-2 mb-3">
+        <select class="custom-select" name="inputGS">
+            <option selected disabled>House</option>
+            <option value="Slytherin">Slytherin</option>
+            <option value="Gryffindor">Gryffindor</option>
+         </select>
+         </div>
+         
+        <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio1" name="customRadio" value="Beater" class="custom-control-input">
+            <label class="custom-control-label" for="customRadio1">Beater</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio2" name="customRadio" value="Chaser" class="custom-control-input">
+            <label class="custom-control-label" for="customRadio2">Chaser</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio3" name="customRadio" value="Keeper" class="custom-control-input">
+            <label class="custom-control-label" for="customRadio3">Keeper</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio4" name="customRadio" value="Seeker" class="custom-control-input">
+            <label class="custom-control-label" for="customRadio4">Seeker</label>
+        </div>
+
+        <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+        <br>
+        <button class="btn btn-primary" type="submit">Submit</button>
+        
+
+    </form>
+
+    <script>
+
+        /* TODO */
+
+    </script>
+
+{% endblock %}
